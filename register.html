@@ -16,7 +16,44 @@
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
     </nav>
-    <h1>register</h1>
+    
+    <div class="content">
+        <div class="card">
+            <h1 class="card-title">Register</h1>
+            <form action="account-settings.html" method="GET" class="register-form"> <!--GET exposes the passwords over the URL. just for mock up-->
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Register</button>
+                </div>
+            </form>
+            <div class="login">
+                <p>Have an account? <a href="./login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <footer class="footer">
         <div class="social-media"><!--we have to create a page for this website on those platforms-->
             <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>

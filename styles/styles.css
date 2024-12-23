@@ -46,7 +46,6 @@ a:hover {
     padding: 20px;
 }
 
-/* Card Layout for Login Form */
 .card {
     background-color: #fff;
     padding: 30px;
@@ -103,19 +102,19 @@ input:focus {
     background-color: #004085;
 }
 
-.signup {
+
+.signup, .login {
     margin-top: 15px;
     font-size: 14px;
 }
 
-.signup a {
+.signup a , .login a{
     color: #0056b3;
     text-decoration: none;
     text-decoration: underline;
     font-size: 12px;
 }
 
-/* Footer with Social Media Links */
 .footer {
     background-color: #333;
     color: white;
