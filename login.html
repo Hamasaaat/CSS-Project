@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,15 +17,42 @@
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
     </nav>
-    <h1>login</h1>
+
+    <div class="content">
+        <div class="card">
+            <h1 class="card-title">Login</h1>
+            <form action="./account-settings.html" method="get" class="login-form"><!--for now, no real login validation-->
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Login</button>
+                </div>
+            </form>
+            <div class="signup">
+                <p>Don't have an account? <a href="./register.html">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="social-media"><!--we have to create a page for this website on those platforms-->
-            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-facebook"></i></a>
         </div>
     </footer>
 </body>
 </body>
+
 </html>
