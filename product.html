@@ -12,13 +12,13 @@
 
 <body>
     <!-- <header> -->
-        <nav>
-            <ul>
-                <li><a href="index.html"><i class="fas fa-house-user"></i></a></li>
-                <li><a href="login.html"><i class="fas fa-user"></i></a></li>
-                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>
-        </nav>
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-house-user"></i></a></li>
+            <li><a href="login.html"><i class="fas fa-user"></i></a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </nav>
     <!-- </header> -->
 
     <div class="search-bar">
@@ -33,45 +33,66 @@
     </div>
 
     <div class="product-grid">
-        <div class="product">
+        <div class="product" data-category="women">
             <img src="https://via.placeholder.com/200" alt="Product">
             <p>Text</p>
             <p>$25</p>
             <button>Add to cart</button>
         </div>
-        <div class="product">
+        <div class="product" data-category="women">
             <img src="https://via.placeholder.com/200" alt="Product">
-            <p>Text</p>
-            <p>$25</p>
+            <p>woemn</p>
+            <p>$30</p>
             <button>Add to cart</button>
         </div>
-        <div class="product">
+        <div class="product" data-category="women">
             <img src="https://via.placeholder.com/200" alt="Product">
             <p>Text</p>
-            <p>$25</p>
+            <p>$20</p>
             <button>Add to cart</button>
         </div>
-        <div class="product">
+        <div class="product" data-category="men">
             <img src="https://via.placeholder.com/200" alt="Product">
             <p>Text</p>
-            <p>$25</p>
+            <p>$50</p>
             <button>Add to cart</button>
         </div>
-        <!-- Add more product cards as needed -->
     </div>
 
-    <footer class="footer">
-        <div class="social-media"><!--we have to create a page for this website on those platforms-->
-            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i
-                    class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i
-                    class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i
-                    class="fab fa-youtube"></i></a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i
-                    class="fab fa-facebook"></i></a>
-        </div>
-    </footer>
+    <script>
+        const categoryButtons = document.querySelectorAll('.category-buttons button');
+        const products = document.querySelectorAll('.product');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to the clicked button
+                button.classList.add('active');
+
+                const category = button.textContent.toLowerCase(); // Get category name
+                // Show or hide products based on category
+                products.forEach(product => {
+                    if (category === 'women' || product.dataset.category === category) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+<footer class="footer">
+    <div class="social-icons">
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>&copy;Copyright Sprints 2025. All rights reserved</p>
+</footer>
+
 </body>
 
 </html>
