@@ -6,30 +6,158 @@
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+    <link rel="stylesheet" href="styles/HomePage.css">
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html" aria-label="Home"><i class="fas fa-house-user"></i></a></li>
-            <li><a href="login.html" aria-label="Login"><i class="fas fa-user"></i></a></li>
-            <li><a href="cart.html" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a></li>
-        </ul>
-    </nav>
+    <header>
+        <h1>LOGO</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" aria-label="Home"><i class="fas fa-house-user"></i></a></li>
+                <li><a href="login.html" aria-label="Login"><i class="fas fa-user"></i></a></li>
+                <li><a href="cart.html" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
 
     <section class="main-content">
-        <h1>Welcome to Our Website</h1>
-        <p>This is some content for the page.</p>
+        <div class="content">
+            <h1>FOR
+                EVERYONE BUT
+                NOT ANYONE</h1>
+            <button>See what’s new</button>
+            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, adipisci velit...</p>
+        </div>
     </section>
+
+    <section class="categories">
+        <h2>Categories</h2>
+        <div class="categories-container">
+
+            <div class="category">
+                <a href="product.html">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
+                        <path
+                            d="m9,0h6c0,1.654-1.346,3-3,3s-3-1.346-3-3Zm11.815,1.195c-1.226-.659-2.509-1.031-3.82-1.144-.028,2.733-2.255,4.949-4.995,4.949S7.033,2.784,7.005.051c-1.311.113-2.594.486-3.82,1.144C1.221,2.25,0,4.335,0,6.636v2.388c0,1.657,1.343,3,3,3h0v-3.024c0-.552.448-1,1-1h0c.552,0,1,.448,1,1v11c0,2.209,1.791,4,4,4h6c2.209,0,4-1.791,4-4v-11c0-.552.448-1,1-1h0c.552,0,1,.448,1,1v3h0c1.657,0,3-1.343,3-3v-2.364c0-2.301-1.221-4.386-3.185-5.44Z" />
+                    </svg>
+                    <p>Men</p>
+                </a>
+            </div>
+
+
+            <div class="category">
+                <a href="product.html">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
+                        <path
+                            d="M23.616,16.007c-1.847,4.804-6.455,8.076-11.616,8.056-5.161,.02-9.77-3.251-11.616-8.056l7.616-5.007h8l7.616,5.007ZM8,9h8l.738-2.212c.174-.782,.262-1.585,.262-2.386V0h-2V2.1c-1.33,.247-2.353,.935-3,1.511-.647-.576-1.67-1.264-3-1.511V0h-2V4.402c0,.801,.088,1.604,.262,2.386l.738,2.212Z" />
+                    </svg>
+
+                    <p>Women</p>
+                </a>
+            </div>
+
+
+            <div class="category">
+                <a href="product.html">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
+                        <path
+                            d="m6.172,5.189c-.112.42-.172.859-.172,1.311,0,3.038,2.686,5.5,6,5.5s6-2.462,6-5.5c0-.461-.062-.908-.179-1.336.145-.07.297-.193.463-.381,1.05-1.195.933-3.015-.262-4.066-1.195-1.05-3.015-.933-4.066.262-.081.092-.147.179-.2.261-.556-.156-1.145-.24-1.756-.24-.616,0-1.21.085-1.769.243-.067-.123-.169-.256-.313-.399-1.125-1.125-2.949-1.125-4.074,0-1.125,1.125-1.125,2.949,0,4.074.117.117.225.206.328.271Zm4.328,3.061c0-.967.672-1.75,1.5-1.75s1.5.783,1.5,1.75h-3Zm-4.129,11.036s1.571,2.095,1.571,4.714h-1.562c-1.978,0-3.841-.932-5.028-2.514l-.775-1.033c-.822-1.096-.782-2.686.226-3.612,1.16-1.066,2.953-.878,3.875.351l1.693,2.095Zm17.053,1.165l-.776,1.035c-1.187,1.583-3.05,2.514-5.028,2.514h-1.583c0-3.667,1.531-4.897,1.531-4.897l1.755-1.912c.922-1.229,2.716-1.416,3.876-.35,1.008.926,1.047,2.515.226,3.609Zm-9.388,3.549h-4.093c0-3.194-1.77-5.646-2.016-5.971l-1.648-2.039c-.782-1.042-1.975-1.708-3.272-1.828-.149-.014-.297-.019-.445-.018l-2.036-2.953c-.868-1.157-.633-2.799.524-3.667.909-.682,2.117-.683,3.014-.091.491,3.697,3.864,6.567,7.938,6.567s7.447-2.87,7.938-6.567c.897-.592,2.105-.59,3.014.091,1.157.868,1.392,2.51.524,3.667l-2.036,2.953c-.148,0-.297.006-.445.02-1.26.115-2.422.747-3.204,1.737l-1.631,1.778c-.583.544-2.124,2.355-2.124,6.321Z" />
+                    </svg>
+
+                    <p>kids</p>
+                </a>
+            </div>
+
+
+            <div class="category">
+                <a href="product.html">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
+                        <path
+                            d="M23.983,21.926a32.651,32.651,0,0,0-.608-5.545A3,3,0,0,0,20.439,14h-2.1s-.343-4.126-.346-4.147l.436-.033c.949-.138,1.682-.181,2.139-1.025a3.02,3.02,0,0,0,.156-2.71C19.084,2.559,14.786,0,10.5,0A10.512,10.512,0,0,0,0,10.5a39.043,39.043,0,0,0,.587,5.155,4.99,4.99,0,0,0,3.457,3.989c.514.161,1.02.311,1.519.458A21.1,21.1,0,0,1,9.3,21.569,4.073,4.073,0,0,0,11.121,22,3.975,3.975,0,0,0,13.9,20.877l1.1-.877h1.834l.071.855a2.978,2.978,0,0,0,2.137,2.631A25.208,25.208,0,0,0,21.979,24a2.013,2.013,0,0,0,2-2.074ZM9,18a1,1,0,1,1,1-1A1,1,0,0,1,9,18Zm11.439-2a.994.994,0,0,1,.977.783c.061.3.138.709.215,1.217H18.667L18.5,16Zm-8.353-3.74a2.854,2.854,0,0,1,2.338-2.142L16,10c0,.027.329,4,.329,4H12.2A2.864,2.864,0,0,1,12.086,12.26Zm2.9,5.74-1.437-2H16.5l.166,2ZM19.6,21.567a.99.99,0,0,1-.707-.878L18.833,20h3.034c.053.608.094,1.277.113,2A11.842,11.842,0,0,1,19.6,21.567Z" />
+                    </svg>
+
+                    <p>Sports</p>
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <img src="https://static.vecteezy.com/system/resources/previews/027/807/333/large_2x/t-shirts-mockup-with-text-space-on-colrful-background-hd-ai-free-photo.jpg"
+        alt="" style="height: 15rem; object-fit: cover;">
+
+    <section class="new-arrivals">
+        <h2>New Arrivals</h2>
+
+        <div class="product-grid">
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/41/8d/34/418d349b78fb4248261b8b527cf9ee00.jpg" alt="Product">
+                <p>Text</p>
+                <p>$25</p>
+                <a href="Product-details.html"><button>Add to cart</button></a>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/36/32/78/363278544b56949d552deb7b6109e84b.jpg" alt="Product">
+                <p>Text</p>
+                <p>$30</p>
+                <a href="Product-details.html"><button>Add to cart</button></a>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/29/6b/b6/296bb6fdd4cde5f1299669555403f684.jpg" alt="Product">
+                <p>Text</p>
+                <p>$20</p>
+                <a href="Product-details.html"><button>Add to cart</button></a>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/b9/69/bb/b969bba3af3c94b29409049c2fed717b.jpg" alt="Product">
+                <p>Text</p>
+                <p>$50</p>
+                <a href="Product-details.html"><button>Add to cart</button></a>
+            </div>
+        </div>
+       <a href="products.html"><button>View All Products</button></a>
+    </section>
+
+    <img src="https://static.vecteezy.com/system/resources/previews/026/859/330/non_2x/of-a-yellow-jacket-hanging-on-a-blue-wall-with-empty-space-for-text-or-design-with-copy-space-free-photo.jpg"
+        alt="" style="height: 15rem; object-fit: cover;">
+
+
+
+    <section class="contact">
+        <div class="contact-form">
+            <h3>Contact Us</h3>
+            <form>
+                <input type="text" name="name" placeholder="Your Name..." required>
+                <input type="email" name="email" placeholder="example@yourmail.com" required>
+                <input type="text" name="subject" placeholder="Title..." required>
+                <textarea name="message" placeholder="Type Here...." required></textarea>
+                <button class="btn">Send</button>
+            </form>
+        </div>
+    </section>
+
 
     <footer class="footer">
         <div class="social-media"><!--we have to create a page for this website on those platforms-->
-            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-facebook"></i></a>
         </div>
+        <br>
+        <p>@Copyright Sprints 2025. All right reserved</p>
     </footer>
 </body>
 
