@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/content-layout.css">
+    <title>Account Settings</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" aria-label="Home"><i class="fas fa-house-user"></i></a></li>
+            <li><a href="login.html" aria-label="Login"><i class="fas fa-user"></i></a></li>
+            <li><a href="cart.html" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </nav>
+    <h1>Account Settings</h1>
+    <div class="container">
+        <div class="side-menu">
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#address-book">Address Book</a></li>
+                <li><a href="#payment">Payment Methods</a></li>
+                <li><a href="#order-history">Order History</a></li>
+                <li><a href="#cancellation">Cancellations</a></li>
+                <li><a href="#wishlist">Wishlist</a></li>
+            </ul>
+        </div>
+
+        <div class="details">
+            <section id="profile" class="content-section">
+                <h2>Profile</h2>
+                <br>
+                <form action="./account-settings.html" method="get" id="profile-form">
+                    <div class="grid-container">
+                        <div class="grid-item">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="grid-item">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                        <div class="grid-item">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="grid-item">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                    </div>
+
+                    <br><br>
+                    <div id="password-change">
+                        <h3>Change Password</h3>
+                        <input type="password" id="current-password" name="current-password"
+                            placeholder="Current Password" required>
+                        <input type="password" id="new-password" name="new-password" placeholder="New Password"
+                            required>
+                        <input type="password" id="confirm-new-password" name="confirm-new-password"
+                            placeholder="Confirm New Password" required>
+                    </div>
+
+                    <div class="button-container">
+                        <a href="./account-settings.html"><button type="button"
+                                class="cancel-button">Cancel</button></a>
+                        <button type="submit" class="save-button">Save Changes</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section id="address-book" class="content-section">
+                <h2>Address Book</h2>
+                <div class="address-form">
+                    <form>
+                        <div class="grid-container">
+                            <div class="grid-item">
+                                <label for="type" id="address-type-label">Type</label>
+                                <input type="text" id="address-type" name="address-type" required>
+                            </div>
+                            <div></div>
+                            <div class="grid-item">
+                                <label for="name" id="first-name-label">First Name</label>
+                                <input type="text" id="first-name" name="first-name" required>
+                            </div>
+                            <div class="grid-item">
+                                <label for="name" id="last-name-label">Last Name</label>
+                                <input type="text" id="last-name" name="last-name" required>
+                            </div>
+                            <div class="grid-item">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            <div></div>
+                            <div class="grid-item">
+                                <label for="city">City</label>
+                                <select name="city">
+                                    <option value="AD">Abu Dhabi</option>
+                                    <option value="AA">Al Ain</option>
+                                    <option value="DXB">Dubai</option>
+                                    <option value="SHJ">Sharjah</option>
+                                    <option value="AJ">Ajman</option>
+                                    <option value="UMQ">Um Al Quwein</option>
+                                    <option value="RAK">Ras Al Khaima</option>
+                                    <option value="FUJ">Fujairah</option>
+                                </select>
+                            </div>
+                            <div class="grid-item">
+                                <label for="country">Country</label>
+                                <select name="country">
+                                    <option value="US">United Arab Emirates</option>
+                                </select>
+                            </div>
+                            <div class="grid-item">
+                                <label for="phone">Phone Number</label>
+                                <input type="text" id="phone" name="phone" required>
+                            </div>
+                            <div></div>
+                            <div class="button-container">
+                                <button type="submit">Add Address</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="payment" class="content-section">
+                <h2>Payment Methods</h2>
+                <p>Update your payment methods here.</p>
+            </section>
+
+            <section id="order-history" class="content-section">
+                <h2>Order History</h2>
+                <p>View your previous orders.</p>
+            </section>
+
+            <section id="cancellation" class="content-section">
+                <h2>Cancellations</h2>
+                <p>View your cancelled or returned orders.</p>
+            </section>
+
+            <section id="wishlist" class="content-section">
+                <h2>Wishlist</h2>
+                <div class="wishlist-container">
+                    <div class="wishlist-item">
+                        <img src="https://via.placeholder.com/100" alt="zipped sports jacket">
+                        <div class="wishlist-item-details">
+                            <h3>Stylish Sport Jacket</h3>
+                            <p>A comfortable and stylish jacket for the studio workout</p>
+                            <p class="wishlist-item-price">$49.99</p>
+                        </div>
+                        <button>Add to Cart</button>
+                    </div>
+
+                    <div class="wishlist-item">
+                        <img src="https://via.placeholder.com/100" alt="sport pants">
+                        <div class="wishlist-item-details">
+                            <h3>Boot Cut Pants</h3>
+                            <p>long boot cut pants with zipper on the bottom</p>
+                            <p class="wishlist-item-price">$79.99</p>
+                        </div>
+                        <button>Add to Cart</button>
+                    </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="social-media">
+            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>
