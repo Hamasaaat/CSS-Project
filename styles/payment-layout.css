@@ -29,7 +29,8 @@
 }
 
 .show-form-btn {
-  background-color: #0056b3;
+  background-color: #007bff;
+  border: 1px solid #007bff;
   color: white;
   border: none;
   padding: 10px;
@@ -63,14 +64,15 @@
 .payment-container button {
   width: 100%;
   padding: 10px;
-  background-color: #0056b3;
+  background-color: #007bff;
+  border: 1px solid #007bff;
   color: white;
   border: none;
   cursor: pointer;
 }
 
 .payment-container button:hover {
-  background-color: #004085;
+  background-color: #0056b3;
 }
 
 .saved-cards {
