@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Account Settings</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/content-layout.css">
+    <title>Account Settings</title>
 </head>
 
 <body>
@@ -17,21 +17,276 @@
             <li><a href="cart.html" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
     </nav>
+    <h1>Account Settings</h1>
+    <div class="container">
+        <div class="side-menu">
+            <ul>
+                <li><a href="#profile"><i class="fas fa-user"></i>  Profile</a></li>
+                <li><a href="#address-book"><i class="fas fa-address-book"></i>  Address Book</a></li>
+                <li><a href="#payment"><i class="fas fa-credit-card"></i>  Payment Methods</a></li>
+                <li><a href="#order-history"><i class="fas fa-history"></i>  Order History</a></li>
+                <li><a href="#cancellation"><i class="fas fa-times-circle"></i>  Cancellations</a></li>
+                <li><a href="#wishlist"><i class="fas fa-heart"></i>  Wishlist</a></li>
+            </ul>
+        </div>
 
-    <section class="main-content">
-        <h1>Welcome to Our Website, this is your profile page</h1>
-    </section>
+        <div class="details">
+            <section id="profile" class="content-section">
+                <h2>Profile</h2>
+                <br>
+                <form action="./account-settings.html" method="get" id="profile-form">
+                    <div class="grid-container">
+                        <div class="grid-item">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="profile-first-name" name="profile-first-name" required>
+                        </div>
+                        <div class="grid-item">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="profile-last-name" name="profile-last-name" required>
+                        </div>
+                        <div class="grid-item">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="grid-item">
+                            <label for="address">Address</label>
+                            <input type="text" id="shipping-address" name="address" required>
+                        </div>
+                    </div>
+
+                    <br><br>
+                    <div id="password-change">
+                        <h3>Change Password</h3>
+                        <input type="password" id="current-password" name="current-password"
+                            placeholder="Current Password" required>
+                        <input type="password" id="new-password" name="new-password" placeholder="New Password"
+                            required>
+                        <input type="password" id="confirm-new-password" name="confirm-new-password"
+                            placeholder="Confirm New Password" required>
+                    </div>
+
+                    <div class="button-container">
+                        <a href="./account-settings.html"><button type="button"
+                                class="cancel-button">Cancel</button></a>
+                        <button type="submit" class="save-button">Save Changes</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section id="address-book" class="content-section">
+                <h2>Address Book</h2>
+                <br>
+                <div class="address-form">
+                    <form>
+                        <div class="grid-container">
+                            <div class="grid-item">
+                                <label for="type" id="address-type-label">Type</label>
+                                <select name="city" style="height: 40px; width: 300px;">
+                                    <option value="AD">Home</option>
+                                    <option value="AA">Office</option>
+                                    <option value="DXB">Others</option>
+                                </select>
+                            </div>
+                            <div></div>
+                            <div class="grid-item">
+                                <label for="name" id="first-name-label">First Name</label>
+                                <input type="text" id="first-name" name="first-name" required>
+                            </div>
+                            <div class="grid-item">
+                                <label for="name" id="last-name-label">Last Name</label>
+                                <input type="text" id="last-name" name="last-name" required>
+                            </div>
+                            <div class="grid-item">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            <div class="grid-item">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="e.g. 0507179199"
+                                    pattern="^(05[0-9]{1})([0-9]{7})$" required>
+                            </div>
+                            <div class="grid-item">
+                                <label for="country">Country</label>
+                                <select name="country" style="height: 40px; width: 300px;">
+                                    <option value="US">United Arab Emirates</option>
+                                </select>
+                            </div>
+                            <div class="grid-item">
+                                <label for="city">City</label>
+                                <select name="city" style="height: 40px; width: 300px;">
+                                    <option value="AD">Abu Dhabi</option>
+                                    <option value="AA">Al Ain</option>
+                                    <option value="DXB">Dubai</option>
+                                    <option value="SHJ">Sharjah</option>
+                                    <option value="AJ">Ajman</option>
+                                    <option value="UMQ">Um Al Quwein</option>
+                                    <option value="RAK">Ras Al Khaima</option>
+                                    <option value="FUJ">Fujairah</option>
+                                </select>
+                            </div>
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div class="button-container">
+                                <a href="./account-settings.html"><button type="button"
+                                        class="cancel-button">Cancel</button></a>
+                                <button type="submit" class="save-button">Add Address</button>
+                            </div>
+
+                        </div>
+                        <div class="saved-addresses">
+                            <h2>Saved Addresses</h2>
+                            <div class="address-card">
+                                <h3>Rania Ahmed</h3>
+                                <p>Home, KCA, Forsan Compund, Abu Dhabi, United Arab Emirates, 0509000456 </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="payment" class="content-section">
+                <h2>Payment Methods</h2>
+                <p>View and update your payment methods here.</p>
+                <div class="payment-container">
+
+                    <div class="add-card-section">
+                        <label for="toggle-form" class="show-form-btn">Add Card</label>
+                        <input type="checkbox" id="toggle-form" class="toggle-form-checkbox">
+
+                        <div class="card-form">
+                            <label for="card-number">Card Number:</label>
+                            <input type="text" id="card-number" placeholder="Enter Card Number" required>
+
+                            <label for="expiry-date">Expiration Date:</label>
+                            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+                            <label for="cvv">CVV:</label>
+                            <input type="password" id="cvv" placeholder="Enter CVV" required>
+
+                            <button type="button" id="save-card-btn">Save Card</button>
+                        </div>
+                    </div>
+
+                    <div class="saved-cards">
+                        <h2>Saved Cards</h2>
+                        <ul>
+                            <li>**** **** **** 1234 | Exp: 12/25</li>
+                            <li>**** **** **** 5678 | Exp: 11/24</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="order-history" class="content-section">
+                <h2>Order History</h2>
+                <section class="order-history">
+
+                    <div class="order">
+                        <div class="order-summary">
+                            <p class="order-id">Order ID: #12345</p>
+                            <p class="order-date">Date: December 1, 2024</p>
+                            <p class="order-status shipped">Status: Shipped</p>
+                            <a href="#">Show Details</a>
+                        </div>
+                        <div class="view-details">
+                            <p class="order-total">Total: $99.99</p>
+                        </div>
+                    </div>
+
+                    <div class="order">
+                        <div class="order-summary">
+                            <p class="order-id">Order ID: #12346</p>
+                            <p class="order-date">Date: December 5, 2024</p>
+                            <p class="order-status delivered">Status: Delivered</p>
+                            <a href="#">Show Details</a>
+                        </div>
+                        <div class="view-details">
+                            <p class="order-total">Total: $49.99</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section id="cancellation" class="content-section">
+                <h2>Cancellations & Refund Policy</h2>
+                    <div class="policy-content">
+                        <h3>Cancellation Policy</h3>
+                        <p>We understand that sometimes things change. If you need to cancel your order, you can do so within 72 hours of purchase. Please follow the instructions below:</p>
+                        <ul>
+                            <li>To cancel your order, please contact our support team at <a href="mailto:support@fasionAvenue.com">support@fasionAvenue.com</a>.</li>
+                            <li>Cancellations are only accepted if the request is within the 72-hour window from the time of purchase.</li>
+                            <li>If your order has already been shipped or processed, you may not be eligible for a full refund.</li>
+                        </ul>
+                        <h3>Refund Policy</h3>
+                        <p>We offer refunds under the following conditions:</p>
+                        <ul>
+                            <li>If you cancel within 72 hours of placing the order, you will receive a full refund.</li>
+                            <li>If you are dissatisfied with your product, you may request a refund within 7 days of receiving the order. Conditions may apply.</li>
+                            <li>Refunds will be processed to the original payment method.</li>
+                            <li>Refund requests will be reviewed, and we may ask for additional documentation (such as order confirmation, shipping receipt, etc.).</li>
+                        </ul>
+                        <h4>How to Request a Refund</h4>
+                        <p>If you are eligible for a refund, please follow the steps below:</p>
+                        <ul>
+                            <li>Contact our support team at <a href="mailto:support@fasionAvenue.com">support@fasionAvenue.com</a>.</li>
+                            <li>Provide your order number, contact information, and a brief explanation of why you are requesting a refund.</li>
+                            <li>Once your request is reviewed, we will notify you of the status of your refund.</li>
+                        </ul>
+                    </div>
+            </section>
+
+            <section id="wishlist" class="content-section">
+                <h2>Wishlist</h2>
+                <div class="wishlist-container">
+
+                    <div class="wishlist-item">
+                        <div class="wishlist-item-image">
+                            <img src="https://via.placeholder.com/100" alt="zipped sports jacket">
+                        </div>
+                        <div class="wishlist-item-details">
+                            <h3>Stylish Sport Jacket</h3>
+                            <p>A comfortable and stylish jacket for the studio workout</p>
+                            <p class="wishlist-item-price">$49.99</p>
+                        </div>
+                        <a href="cart.html">
+                            <button>Add to Cart</button>
+                        </a>
+                    </div>
+
+                    <div class="wishlist-item">
+                        <div class="wishlist-item-image">
+                            <img src="https://via.placeholder.com/100" alt="sport pants">
+                        </div>
+                        <div class="wishlist-item-details">
+                            <h3>Boot Cut Pants</h3>
+                            <p>long boot cut pants with zipper on the bottom</p>
+                            <p class="wishlist-item-price">$79.99</p>
+                        </div>
+                        <a href="cart.html">
+                            <button>Add to Cart</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
 
     <footer class="footer">
-        <div class="social-media"><!--we have to create a page for this website on those platforms-->
-            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+        <div class="social-media">
+            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-facebook"></i></a>
         </div>
     </footer>
 </body>
-
-
 
 </html>

@@ -1,0 +1,96 @@
+/* Basic styling */
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+.payment-container body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+.add-card-section {
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.show-form-btn {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggle-form-checkbox {
+  display: none;
+}
+
+.card-form {
+  margin-top: 20px;
+  display: none;
+}
+
+.card-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.card-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.payment-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.payment-container button:hover {
+  background-color: #004085;
+}
+
+.saved-cards {
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+}
+
+.saved-cards ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.saved-cards li {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Toggle the visibility of the card form when the checkbox is checked */
+.toggle-form-checkbox:checked+.card-form {
+  display: block;
+}
