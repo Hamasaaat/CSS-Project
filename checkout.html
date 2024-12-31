@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/checkout.css">
+    <link rel="stylesheet" href="styles/HomePage.css">
+</head>
+
+<body>
+    <header>
+        <h1>LOGO</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" aria-label="Home"><i class="fas fa-house-user"></i></a></li>
+                <li><a href="login.html" aria-label="Login"><i class="fas fa-user"></i></a></li>
+                <li><a href="cart.html" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select a Country</option>
+                        <option value="UAE">United Arab Emirates</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Your Name..." required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Your Name..." required>
+                </div>
+                <div class="form-group">
+                    <label for="address-line-1">Address Line 1</label>
+                    <input type="text" id="address-line-1" name="address-line-1" placeholder="Enter Your Address..."
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+971 xxx xxx xxx" pattern="^\+?\d{10,15}$"
+                        required>
+                </div>
+                <h2>Payment</h2>
+                <div class="payment-methods">
+                    <label><input type="radio" name="payment" value="mastercard" required> Master Card</label>
+                    <label><input type="radio" name="payment" value="paypal" required> PayPal</label>
+                </div>
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="Enter Your Card Number..."
+                        pattern="^\d{16}$" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-holder-name">Card Holder Name</label>
+                    <input type="text" id="card-holder-name" name="card-holder-name"
+                        placeholder="Enter Card Holder Name..." required>
+                </div>
+                <div class="form-group">
+                    <label for="expire-date">Expire Date</label>
+                    <input type="text" id="expire-date" name="expire-date" placeholder="MM/YY" pattern="^\d{2}/\d{2}$"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV Code</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="XXX" pattern="^\d{3}$" required>
+                </div>
+                <button type="submit" class="checkout-button">Checkout</button>
+            </form>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary-section">
+            <h2>Your Cart Summary</h2>
+            <div id="cart-items" class="cart-items-container">
+            </div>
+            <div class="total">
+                <span>Total:</span>
+                <span id="total-price">$0</span>
+            </div>
+            <!-- <button class="checkout-button">Checkout</button> -->
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="social-media">
+            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        loadCartSummary();
+
+        // Validate form before submission and redirect to confirmation page
+        document.getElementById('checkout-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            if (this.checkValidity()) {
+                // Redirect to the confirmation page
+                window.location.href = "confirmation.html";
+            } else {
+                alert('Please fill out all fields correctly before checking out.');
+            }
+        });
+    });
+
+    function loadCartSummary() {
+        const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.getElementById('cart-items');
+        const totalPriceElement = document.getElementById('total-price');
+        let total = 0;
+
+        cartItemsContainer.innerHTML = ''; // Clear previous items
+
+        savedCart.forEach(item => {
+            const price = parseFloat(item.price.replace('$', ''));
+            total += price;
+
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+            cartItem.innerHTML = `
+                <span>${item.name}</span>
+                <span>${item.price}</span>
+            `;
+            cartItemsContainer.appendChild(cartItem);
+        });
+
+        totalPriceElement.textContent = `$${total.toFixed(2)}`;
+    }
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/cart.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>LOGO</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" aria-label="Home"><i class="fas fa-house-user"></i></a></li>
+                <li><a href="login.html" aria-label="Login"><i class="fas fa-user"></i></a></li>
+                <li><a href="cart.html" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="cart-container">
+        <h1>My Cart</h1>
+        <div class="cart-item">
+            <img src="product1.avif" alt="Product 1">
+            <div class="product-details">
+                <p class="product-name">Product_Name</p>
+                <p class="product-attributes">Product_Attributes</p>
+            </div>
+            <div class="qty">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+            <div class="price">$50</div>
+            <div class="remove-btn">✕</div>
+        </div>
+
+        <div class="cart-item">
+            <img src="product2.jpeg" alt="Product 2">
+            <div class="product-details">
+                <p class="product-name">Product_Name</p>
+                <p class="product-attributes">Product_Attributes</p>
+            </div>
+            <div class="qty">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+            <div class="price">$50</div>
+            <div class="remove-btn">✕</div>
+        </div>
+
+        <div class="cart-item">
+            <img src="product3.webp" alt="Product 3">
+            <div class="product-details">
+                <p class="product-name">Product_Name</p>
+                <p class="product-attributes">Product_Attributes</p>
+            </div>
+            <div class="qty">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+            <div class="price">$50</div>
+            <div class="remove-btn">✕</div>
+        </div>
+
+        <div class="total">
+            <span>Total</span>
+            <span id="total-price">$150</span>
+        </div>
+
+        <a href="checkout.html" class="checkout-btn">Checkout →</a>
+
+
+    </div>
+    <footer class="footer">
+        <div class="social-media"><!--we have to create a page for this website on those platforms-->
+            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-facebook"></i></a>
+        </div>
+        <br>
+        <p>@Copyright Sprints 2025. All right reserved</p>
+    </footer>
+
+
+    <script>
+        function renderCart() {
+            const cartContainer = document.querySelector('.cart-container');
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalPriceElement = document.getElementById('total-price');
+
+            let totalPrice = 0;
+
+            // Clear existing items
+            cartContainer.querySelectorAll('.cart-item').forEach(item => item.remove());
+
+            cartItems.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="product-details">
+                        <p class="product-name">${item.name}</p>
+                    </div>
+                    <div class="qty">
+                        <button class="decrease" data-index="${index}">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase" data-index="${index}">+</button>
+                    </div>
+                    <div class="price">${item.price}</div>
+                    <div class="remove-btn" data-index="${index}">✕</div>
+                `;
+
+                cartContainer.insertBefore(cartItem, totalPriceElement.parentNode);
+
+                // Update total price
+                totalPrice += parseFloat(item.price.replace('$', ''));
+            });
+
+            totalPriceElement.textContent = `$${totalPrice}`;
+
+            attachCartEventListeners();
+        }
+
+        function attachCartEventListeners() {
+            document.querySelectorAll('.increase').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const index = event.target.dataset.index;
+                    updateQuantity(index, 1);
+                });
+            });
+
+            document.querySelectorAll('.decrease').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const index = event.target.dataset.index;
+                    updateQuantity(index, -1);
+                });
+            });
+
+            document.querySelectorAll('.remove-btn').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const index = event.target.dataset.index;
+                    removeFromCart(index);
+                });
+            });
+        }
+
+        function updateQuantity(index, change) {
+            const quantities = document.querySelectorAll('.quantity');
+            const quantityElement = quantities[index];
+            let quantity = parseInt(quantityElement.textContent);
+            if (quantity + change >= 1) {
+                quantityElement.textContent = quantity + change;
+                recalculateTotal();
+            }
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function recalculateTotal() {
+            const prices = document.querySelectorAll('.price');
+            const quantities = document.querySelectorAll('.quantity');
+            let total = 0;
+
+            prices.forEach((priceElement, index) => {
+                const price = parseFloat(priceElement.textContent.replace('$', ''));
+                const quantity = parseInt(quantities[index].textContent);
+                total += price * quantity;
+            });
+
+            document.getElementById('total-price').textContent = `$${total}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCart);
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCart();
+        });
+        function updateQuantity(index, change) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const quantities = document.querySelectorAll('.quantity');
+            let quantity = parseInt(quantities[index].textContent);
+
+            if (quantity + change >= 1) {
+                quantities[index].textContent = quantity + change;
+
+                // Update the quantity in the cart array
+                cart[index].quantity = (cart[index].quantity || 1) + change;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                recalculateTotal();
+            }
+        }
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1); // Remove the item
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+    </script>
+
+</body>
+
+</html>

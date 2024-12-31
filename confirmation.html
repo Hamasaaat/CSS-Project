@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="styles/conf.css">
+    <link rel="stylesheet" href="styles/HomePage.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>LOGO</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" aria-label="Home"><i class="fas fa-house-user"></i></a></li>
+                <li><a href="login.html" aria-label="Login"><i class="fas fa-user"></i></a></li>
+                <li><a href="cart.html" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="confirmation-container">
+        <h1>Thank You!</h1>
+        <p>Your order has been placed successfully.</p>
+        <p>Your order number is: <span id="order-number"></span></p>
+        <p>We appreciate you choosing us!</p>
+        <a href="index.html" class="home-button">Go Back to Home</a>
+    </div>
+    <footer class="footer">
+        <div class="social-media"><!--we have to create a page for this website on those platforms-->
+            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-facebook"></i></a>
+        </div>
+        <br>
+        <p>@Copyright Sprints 2025. All right reserved</p>
+    </footer>
+
+    <script>
+        // Generate a random order number
+        function generateOrderNumber() {
+            return Math.floor(100000 + Math.random() * 900000); // Random 6-digit number
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderNumber = generateOrderNumber();
+            document.getElementById('order-number').textContent = orderNumber;
+
+            // Clear the cart as the order is completed
+            localStorage.removeItem('cart');
+        });
+    </script>
+</body>
+
+</html>
