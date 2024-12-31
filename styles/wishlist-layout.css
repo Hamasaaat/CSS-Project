@@ -15,7 +15,15 @@
   .wishlist-item-image {
       flex-shrink: 0;
       margin-right: 20px;
+
   }
+
+  .wishlist-item-image img {
+    width: 100%;
+    max-width: 100px;
+    height: 100%;
+    object-fit: contain;
+}
 
   .wishlist-item-details {
       flex-grow: 1;
