@@ -1,23 +1,52 @@
-nav {
+html,
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+header {
     background-color: #333;
     display: flex;
-    justify-content: flex-end;
-    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header,
+.main-content,
+.categories,
+.contact {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+header h1 {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
     z-index: 1;
 }
 
-nav ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-nav li {
+li {
     margin: 0 15px;
 }
 
-a {
+li a {
     color: white;
     font-size: 24px;
     text-decoration: none;
@@ -34,24 +63,27 @@ a:hover {
     color: white;
     padding: 20px;
     text-align: center;
-    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     margin-top: auto;
 }
 
+footer p {
+    margin: 0;
+}
+
 .social-media {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 10px;
 }
 
 .social-media a {
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     transition: color 0.3s ease;
 }
 
@@ -59,7 +91,6 @@ a:hover {
     color: #f0a500;
     text-decoration: underline;
 }
-
 
 html,
 body {
