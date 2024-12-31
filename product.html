@@ -7,7 +7,7 @@
     <title>Product Page</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/product.css">
-    <!-- <link rel="stylesheet" href="styles/HomePage.css"> -->
+   
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
@@ -315,7 +315,20 @@
 
         // Initial filtering to show the "All" category
         filterProducts();
+        document.querySelectorAll('.product').forEach(product => {
+            const button = product.querySelector('button');
+            button.addEventListener('click', () => {
+                const name = product.querySelector('.product-description').textContent.trim();
+                const price = product.querySelector('.product-price').textContent.trim();
+                const image = product.querySelector('img').src;
 
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push({ name, price, image });
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                alert(`${name} has been added to your cart!`);
+            });
+        });
     </script>
 
     <footer class="footer">

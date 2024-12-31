@@ -23,12 +23,12 @@
     </header>
 
     <div class="product-details">
-        <img src="https://placehold.co/500x500" alt="product image">
+        <img src="https://placehold.co/500x500" alt="Product image" id="product-image">
 
         <div class="product-info">
-            <h3>Text Heading</h3>
+            <h3 id="product-name">Product Name</h3>
             <p class="offer">Special offer</p>
-            <p class="price">$50</p>
+            <p class="price" id="product-price">$50</p>
             <label for="quantity">Quantity</label>
             <select id="quantity" name="quantity">
                 <option value="1">1</option>
@@ -36,22 +36,12 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
             </select>
-            <a href="cart.html"><button class="btn">Add to cart</button></a>
-
-            <div class="description">
-                <p style="font-weight: bold; margin: 0;">description</p>
-                <p style="color: gray; margin: 10px 0;">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Sapiente, aut ipsum! Voluptatem reprehenderit, debitis et dolor soluta harum modi doloribus?</p>
-            </div>
+            <button class="btn" onclick="addToCartFromDetails()">Add to cart</button>
         </div>
-
     </div>
+
+
 
 
     <section class="review-container">
@@ -154,6 +144,27 @@
         <br>
         <p>@Copyright Sprints 2025. All right reserved</p>
     </footer>
+
+    <script>
+        function addToCartFromDetails() {
+            const name = document.getElementById('product-name').textContent.trim();
+            const price = document.getElementById('product-price').textContent.trim();
+            const image = document.getElementById('product-image').src;
+            const quantity = document.getElementById('quantity').value;
+
+            const product = {
+                name,
+                price,
+                image,
+                quantity: parseInt(quantity, 10),
+            };
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${product.name} has been added to your cart!`);
+        }
+    </script>
 </body>
 
 </html>

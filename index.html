@@ -101,30 +101,39 @@
         <div class="product-grid">
             <div class="product">
                 <img src="https://i.pinimg.com/736x/41/8d/34/418d349b78fb4248261b8b527cf9ee00.jpg" alt="Product">
-                <p>Text</p>
+                <p>Product 1</p>
                 <p>$25</p>
-                <a href="Product-details.html"><button>Add to cart</button></a>
+                <button
+                    onclick="viewProductDetails('Product 1', '$25', 'https://i.pinimg.com/736x/41/8d/34/418d349b78fb4248261b8b527cf9ee00.jpg')">View
+                    Details</button>
             </div>
             <div class="product">
                 <img src="https://i.pinimg.com/736x/36/32/78/363278544b56949d552deb7b6109e84b.jpg" alt="Product">
-                <p>Text</p>
+                <p>Product 2</p>
                 <p>$30</p>
-                <a href="Product-details.html"><button>Add to cart</button></a>
+                <button
+                    onclick="viewProductDetails('Product 2', '$30', 'https://i.pinimg.com/736x/36/32/78/363278544b56949d552deb7b6109e84b.jpg')">View
+                    Details</button>
             </div>
             <div class="product">
                 <img src="https://i.pinimg.com/736x/29/6b/b6/296bb6fdd4cde5f1299669555403f684.jpg" alt="Product">
-                <p>Text</p>
+                <p>Product 3</p>
                 <p>$20</p>
-                <a href="Product-details.html"><button>Add to cart</button></a>
+                <button
+                    onclick="viewProductDetails('Product 3', '$20', 'https://i.pinimg.com/736x/29/6b/b6/296bb6fdd4cde5f1299669555403f684.jpg')">View
+                    Details</button>
             </div>
             <div class="product">
                 <img src="https://i.pinimg.com/736x/b9/69/bb/b969bba3af3c94b29409049c2fed717b.jpg" alt="Product">
-                <p>Text</p>
+                <p>Product 4</p>
                 <p>$50</p>
-                <a href="Product-details.html"><button>Add to cart</button></a>
+                <button
+                    onclick="viewProductDetails('Product 4', '$50', 'https://i.pinimg.com/736x/b9/69/bb/b969bba3af3c94b29409049c2fed717b.jpg')">View
+                    Details</button>
             </div>
         </div>
-       <a href="./product.html"><button>View All Products</button></a>
+
+        <a href="./product.html"><button>View All Products</button></a>
     </section>
 
     <img src="https://static.vecteezy.com/system/resources/previews/026/859/330/non_2x/of-a-yellow-jacket-hanging-on-a-blue-wall-with-empty-space-for-text-or-design-with-copy-space-free-photo.jpg"
@@ -160,6 +169,27 @@
         <br>
         <p>@Copyright Sprints 2025. All right reserved</p>
     </footer>
+
+    <script>
+        // Function to add an item to the cart
+        function addToCart(product) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${product.name} has been added to your cart!`);
+        }
+        function viewProductDetails(name, price, image) {
+            // Construct the URL with query parameters
+            const params = new URLSearchParams({
+                name,
+                price,
+                image
+            });
+
+            // Redirect to Product Details page
+            window.location.href = `Product-details.html?${params.toString()}`;
+        }
+    </script>
 </body>
 
 
